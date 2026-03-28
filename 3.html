@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Car Animation</title>
+  <style>
+    /* Step 2: Style the div and animation */
+    .car-div {
+      width: 200px;
+      height: 200px;
+      /* Use your car image URL here (replace with the actual image link) */
+      background-image: url("https://images.unsplash.com/photo-1552519507-da3b142c6e3d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fDE2OTYwNjU1NTN8fHx8&auto=format&fit=crop&w=1470&q=80");
+      background-size: cover;   /* Ensure the image covers the div */
+      background-position: center; /* Center the image */
+      position: relative;       /* For positioning context */
+      left: 0;                  /* Start at top-left */
+      top: 0;                   /* Start at top-left */
+      
+      /* Animation: name, duration, timing-function, iteration */
+      animation: drive 5s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+    }
+
+    /* Step 3: Define the animation keyframes */
+    @keyframes drive {
+      from {
+        left: 0;
+        top: 0;
+        transform: scale(1); /* Optional: Add scale for emphasis */
+      }
+      to {
+        left: calc(100vw - 200px); /* Move to right edge (viewport width - div width) */
+        top: calc(100vh - 200px);  /* Move to bottom edge (viewport height - div height) */
+        transform: scale(1.05);    /* Optional: Slight zoom at the end */
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="car-div"></div>
+</body>
+</html>
